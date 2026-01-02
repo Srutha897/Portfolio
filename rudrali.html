@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rudrali Enterprises | Project Showcase</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+    --primary: #00D4FF;
+    --secondary: #7B61FF;
+    --dark-bg: #0A0A0F;
+    --dark-card: #121218;
+    --dark-border: #2A2A35;
+    --text: #F5F5F7;
+    --muted: #B0B0C0;
+    --transition: all 0.4s ease;
+    --shadow: 0 4px 25px rgba(0,0,0,0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background: var(--dark-bg);
+    color: var(--text);
+}
+
+/* Header */
+.header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--dark-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 3rem 2rem;
+}
+
+/* Title */
+.project-title {
+    font-size: 2.8rem;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+}
+
+.project-desc {
+    color: var(--muted);
+    max-width: 800px;
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    box-shadow: var(--shadow);
+     margin-top: 2.5rem;
+}
+
+.carousel-track {
+    position: relative;
+    height: 520px;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(0,0,0,0.6);
+    border: none;
+    border-radius: 50%;
+    color: var(--primary);
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.arrow:hover {
+    background: var(--primary);
+    color: var(--dark-bg);
+}
+
+.arrow.prev { left: 20px; }
+.arrow.next { right: 20px; }
+
+/* Tech Stack */
+.tech-stack {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.tech {
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    background: rgba(123,97,255,0.15);
+    color: var(--secondary);
+    font-size: 0.85rem;
+}
+
+/* Footer Nav */
+.footer-nav {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-nav a {
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-btn {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.live-btn {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: #000;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .carousel-track {
+        height: 300px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <a href="portfolio.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    <span>Project Showcase</span>
+</header>
+
+<div class="container">
+   <h1 class="project-title">Rudrali Enterprises</h1>
+
+<p class="project-desc">
+    Designed and developed a fully responsive multi-page e-commerce website for Rudrali, focusing on clean UI, usability, and cross-device compatibility. Built using HTML, CSS, JavaScript, and Bootstrap, the website includes structured product pages, navigation flows, and reusable UI components.
+    Implemented mobile-first responsive design, ensuring seamless performance across desktops, tablets, and smartphones. Emphasized modern layout techniques, intuitive user experience, and consistent styling to simulate a real-world business website. This project strengthened practical skills in frontend development, responsive layouts, and UI structuring for scalable web applications.
+</p>
+
+<p class="project-desc">
+    <strong>Tech Stack:</strong> HTML, CSS, JavaScript, Bootstrap
+</p>
+
+<p class="project-desc">
+    <strong>Key Highlights:</strong> Responsive design, multi-page navigation, reusable components, real-world business use case
+</p>
+
+    <!-- Carousel -->
+    <div class="carousel">
+        <button class="arrow prev" onclick="prevSlide()">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="carousel-track">
+            <div class="slide active"><img src="Images/RudraliDemo/Rudrali_SS2.png"></div>
+            <div class="slide"><img src="Images/RudraliDemo/Rudrali_SS3.png"></div>
+            <div class="slide"><img src="Images/RudraliDemo/Rudrali_SS1.png"></div>
+            <div class="slide"><img src="Images/RudraliDemo/Byadgi_Chilli_Page.png"></div>
+        </div>
+
+        <button class="arrow next" onclick="nextSlide()">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="tech-stack">
+        <span class="tech">HTML</span>
+        <span class="tech">CSS</span>
+        <span class="tech">JavaScript</span>
+        <span class="tech">Bootstrap</span>
+    </div>
+
+    <!-- Footer Buttons -->
+    <div class="footer-nav">
+        <a href="portfolio.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
+        <!-- <a href="#" class="live-btn">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+        </a> -->
+    </div>
+</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index) {
+    slides.forEach(s => s.classList.remove("active"));
+    slides[index].classList.add("active");
+}
+
+function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+}
+
+function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+}
+
+// Auto play
+setInterval(nextSlide, 5000);
+</script>
+
+</body>
+</html>
